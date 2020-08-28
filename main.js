@@ -26,14 +26,20 @@ function displayEmployeeInputs (){
     el.empty();
     for (let i=0; i<employeeInputs.length; i++){
         el.append(`
-        <tr>
+        <tr class = "employeeTableInputs">
         <th>${employeeInputs[i].firstName}</th>
         <th>${employeeInputs[i].lastName}</th>
         <th>${employeeInputs[i].idInput}</th>
         <th>${employeeInputs[i].title}</th>
         <th>${employeeInputs[i].annualSalary}</th>
-        </tr>`)
+        <th><button type = submit class="delete">Delete</button></th>
+        </tr>`);
     }
-
-    
+    $('.delete').on('click', removeEmployeeInput);
+    function removeEmployeeInput() {
+        console.log('removeEmployeeInput');
+        let employeeInputs = $('.employeeTableInputs');
+        employeeInputs.remove();
+    }
 }
+
