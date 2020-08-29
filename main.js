@@ -39,6 +39,7 @@ function displayEmployeeInputs (){
     function removeEmployeeInput() {
         console.log('removeEmployeeInput');
         let employeeInputs = $('.employeeTableInputs');
+        let buttonClicked = $(this);
         employeeInputs.remove();
     }
 }
