@@ -1,10 +1,25 @@
 $(document).ready (onReady);
 
 function onReady (){
-    $(document).on('click', '.buttonSubmitInput', addEmployeeInputs)
-    displayEmployeeInputs();
+    $(document).on('click', '.buttonSubmitInput', submissionRequirements);
+    $(document).on('click', '.delete', deletionBtn);
 }
 let employeeInputs = [];
+
+function submissionRequirements (){
+    if ($('.firstNameInput').val() === '' ||
+        $('.lastNameInput').val() === '' ||
+        $('.idInput').val() === '' ||
+        $('.titleInput').val() === '' ||
+        $('.salaryInput').val() === '')
+        {return false;
+        }
+    else {
+        addEmployeeInputs();
+    }
+}
+
+
 
 function addEmployeeInputs (){
     console.log('addEmployeeInputs');
@@ -16,31 +31,24 @@ function addEmployeeInputs (){
         annualSalary: $('.salaryInput').val(),
     }
     employeeInputs.push(newInputs);
-    displayEmployeeInputs();  
-}
-
-
-function displayEmployeeInputs (){
-    console.log('displayEmployeeInputs');
-    let el = $('.mainTable');
+    let el = $('.primaryTable');
     el.empty();
-    for (let i=0; i<employeeInputs.length; i++){
-        el.append(`
-        <tr class = "employeeTableInputs">
-        <th>${employeeInputs[i].firstName}</th>
-        <th>${employeeInputs[i].lastName}</th>
-        <th>${employeeInputs[i].idInput}</th>
-        <th>${employeeInputs[i].title}</th>
+    for (let i = 0; i < employeeInputs.length; i++) {
+        el.append(`<tr>
+        <th>${employeeInputs[i].firstName}</th>          
+        <th>${employeeInputs[i].lastName}</th>     
+        <th>${employeeInputs[i].idInput}</th>    
+        <th>${employeeInputs[i].title}</th>  
         <th>${employeeInputs[i].annualSalary}</th>
         <th><button type = submit class="delete">Delete</button></th>
-        </tr>`);
+        </th>`)
     }
-    $('.delete').on('click', removeEmployeeInput);
-    function removeEmployeeInput() {
-        console.log('removeEmployeeInput');
-        let employeeInputs = $('.employeeTableInputs');
-        let buttonClicked = $(this);
-        employeeInputs.remove();
-    }
-}
+};
 
+
+
+function deletionBtn (){
+    let thisRow = $(this).closest('tr');
+    console.log('removeEmployeeInput');
+    thisRow.remove();
+}
