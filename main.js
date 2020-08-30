@@ -75,6 +75,6 @@ function totalMonthlySalaries (){
             $('.totalMonthlies').css('background-color', "red");
     }   
         $('.totalMonthlies').val('');
-        el.text('Total Monthly Salaries: $' + totalSalaries.toFixed(2));
+        el.append(totalSalaries.toFixed(2));
 }
 }
