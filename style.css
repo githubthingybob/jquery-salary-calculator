@@ -1,0 +1,44 @@
+body {
+    background-color: rgb(56, 41, 68);
+    text-align:center;
+    margin-top:100px;
+}
+
+h1 {
+    color: white;
+    border-bottom: white solid 3px;
+}
+
+h2 {
+    color:white;
+    border-bottom: white solid 1px;
+}
+
+.inputInformation {
+    color: black;
+    background-color: rgb(131, 52, 120);
+    padding: 5px;
+    width:100%;
+}
+
+.tableDiv {
+    color: white;
+    background: rgb(39, 101, 109);
+    padding: 30px;
+}
+
+.mainTable {
+    text-align:center;
+    width: 100%;
+    margin-right: auto;
+    margin-left:auto;
+}
+
+h4{ 
+    color:white;
+    background:lightseagreen;
+}
+
+.constantInfo {
+    background-color: rgb(82, 36, 82);
+}

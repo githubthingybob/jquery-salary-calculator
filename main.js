@@ -48,6 +48,9 @@ function addEmployeeInputs (){
         <th>$${newInputs.annualSalary}</th>
         <th><button type = submit class="delete">Delete</button></th>
         </th>`) 
+
+    $('.employeeInputTable:even').css('background-color', 'darkslategray');
+    $('.employeeInputTable:odd').css('background-color', 'black');
 // tried doing ${employeeInputs[i].firstname} but DID NOT work bc of deletionBtn
 //could not fix deletionBtn function ->re-adds deleted content after submitting new employee inputs
 }
